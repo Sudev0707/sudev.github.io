@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(17, 10, 56);
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper .static-txt {
+    color: azure;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.dynamic-txt li {
+    list-style: none;
+    color: rgb(255, 2, 2);
+    font-size: 80px;
+    font-weight: 600;
+    top: 0;
+    position: relative;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.warapper .dynamic-txt {
+    margin-left: 15px;
+    line-height: 90px;
+    /* background-color: orangered; */
+    overflow: hidden;
+}
+
+.dynamic-txt li {
+    position: relative;
+}
+
+.dynamic-txt li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    border-left: 2px solid red;
+    animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+    100% {
+        left: 0;
+    }
+}
